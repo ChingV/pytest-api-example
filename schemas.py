@@ -18,3 +18,22 @@ pet = {
         },
     }
 }
+
+# Optional: for validating POST /store/order response
+order = {
+    "type": "object",
+    "required": ["id", "pet_id"],
+    "properties": {
+        "id": {"type": "string"},
+        "pet_id": {"type": "integer"}
+    }
+}
+
+# For validating PATCH /store/order/{order_id} response
+order_update_response = {
+    "type": "object",
+    "required": ["message"],
+    "properties": {
+        "message": {"type": "string"}
+    }
+}
